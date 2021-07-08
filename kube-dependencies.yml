@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: localhost
   become: yes
   tasks:
    - name: Docker Installation
@@ -39,9 +39,7 @@
        name: kubeadm=1.14.0-00
        state: present
 
-- hosts: masters
-  become: yes
-  tasks:
+
    - name: install kubectl
      apt:
        name: kubectl=1.14.0-00
